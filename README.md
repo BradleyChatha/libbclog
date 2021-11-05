@@ -87,8 +87,13 @@ void main()
 ## TODO
 
 [ ] Make Windows thread-safe
+
 [ ] Add more sinks
+
 [ ] Add threading tests
+
 [ ] Add a log rotater sink
+
 [ ] ???
+
 [x] profit
