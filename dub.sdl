@@ -1,0 +1,22 @@
+name "libbclog"
+description "A betterC structured logger"
+authors "Bradley Chatha"
+copyright "Copyright © 2021, Bradley Chatha"
+license "MIT"
+dependency "libbcfmt" version="~>0.1.2"
+dependency "libbcds" version="~>0.1.1"
+subConfiguration "libbcds" "betterC"
+configuration "default" {
+	targetType "library"
+}
+configuration "unittest" {
+	dependency "silly" version="~>1.1.1"
+	targetType "library"
+}
+configuration "betterC" {
+	targetType "library"
+	dflags "-betterC"
+}
+configuration "debugSerialiser" {
+	versions "LIBBC_LOG_DEBUG_SERIALISER"
+}

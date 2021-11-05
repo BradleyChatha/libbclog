@@ -1,0 +1,17 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/libbclog
+libbclog.so
+libbclog.dylib
+libbclog.dll
+libbclog.a
+libbclog.lib
+libbclog-test-*
+*.exe
+*.o
+*.obj
+*.lst
+*.log
+*.a
