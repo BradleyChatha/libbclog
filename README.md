@@ -19,7 +19,7 @@ This is an allocationless, thread-safe*, betterC, structured logging library tha
 
 ## Quick Start
 
-Add this library via dub/your preferred method (I'll be Mesonifying this library soon).
+Add this library via dub/meson/your preferred method.
 
 ```d
 import libbc.log;

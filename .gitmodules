@@ -1,0 +1,3 @@
+[submodule "subprojects/libbcfmt"]
+	path = subprojects/libbcfmt
+	url = https://github.com/BradleyChatha/libbcfmt
