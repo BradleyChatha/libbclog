@@ -170,7 +170,7 @@ void jsonToOutputSink(Sink, Fields...)(auto ref Sink s, Fields fields)
         else static if(is(ValueT == String))
         {
             s.put(`"`);
-            putEscapeds(value.sliceUnsafe);
+            putEscaped(value.sliceUnsafe);
             s.put(`"`);
         }
         else static if(is(ValueT == struct))
