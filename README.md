@@ -1,6 +1,6 @@
 # Overview
 
-This is an allocationless, thread-safe*, betterC, structured logging library that supports custom log sinks.
+This is an extremely fast, allocationless, thread-safe*, betterC, structured logging library that supports custom log sinks.
 
 (* Currently only on Posix since I need to setup a dev env for Windows. Also maybe not even on Posix since I haven't properly tested it yet.)
 
@@ -83,6 +83,34 @@ void main()
     logger.info("But this will");
 }
 ```
+
+## Performance
+
+As is custom with benchmarks, take everything with a grain of salt.
+
+There are currently two tests:
+
+* hello_world - A simple `log.info("hello world")`
+* 6_fields - Prints out 6 fields, all being different types for JSON serialisation
+
+Across three sinks:
+
+* console - Uses printf
+* null - Performs serialisation, but doesn't output it anywhere
+* file - Outputs to a file
+
+### Result set 1 - Intel(R) Celeron(R) CPU N3350 @ 1.10GHz
+
+Units: **ns = nano seconds** and **us = micro seconds**.
+
+| test+sink           | iterations | ns/op | us/op | ns/total   | us/total | secs/total  |
+|---------------------|------------|-------|-------|------------|----------|-------------|
+| console hello_world | 100000     | 41897 | 41    | 4189774378 | 4142458  | 4.189774378 |
+| null hello_world    | 100000     | 283   | 0     | 28396792   | 579      | 0.028396792 |
+| file hello_world    | 100000     | 2482  | 2     | 248276451  | 297487   | 0.248276451 |
+| console 6_fields    | 100000     | 90012 | 89    | 9001273208 | 8962859  | 9.001273208 |
+| null 6_fields       | 100000     | 573   | 0     | 57367364   | 4149     | 0.057367364 |
+| file 6_fields       | 100000     | 9041  | 8     | 904163987  | 864092   | 0.904163987 |
 
 ## TODO
 

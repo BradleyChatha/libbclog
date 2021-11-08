@@ -10,5 +10,7 @@ src = [
 
 include = include_directories('source/')
 
-libbclog = static_library('bcfmt', src, include_directories: include, dependencies: libbcfmt_dep, d_args: '-betterC')
+libbclog = static_library('bclog', src, include_directories: include, dependencies: libbcfmt_dep, d_args: '-betterC')
 libbclog_dep = declare_dependency(sources: src, include_directories: include, dependencies: libbcfmt_dep)
+
+libbclog_bench = executable('bench', src, 'benchmark/main.d', dependencies: libbclog_dep)
