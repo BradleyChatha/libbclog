@@ -112,6 +112,17 @@ Units: **ns = nano seconds** and **us = micro seconds**.
 | null 6_fields       | 100000     | 573   | 0     | 57367364   | 4149     | 0.057367364 |
 | file 6_fields       | 100000     | 9041  | 8     | 904163987  | 864092   | 0.904163987 |
 
+### Result set 2 - Intel(R) Core(TM) i5-7600K CPU @ 3.80GHz
+
+| test+sink           | iterations | ns/op | us/op | ns/total   | us/total | secs/total  |
+|---------------------|------------|-------|-------|------------|----------|-------------|
+| console hello_world | 100000     | 3968  | 3     | 398628984  | 321941   | 0.398628984 |
+| null hello_world    | 100000     | 63    | 0     | 6342413    | 4        | 0.006342413 |
+| file hello_world    | 100000     | 603   | 2     | 60306126   | 11314    | 0.060306126 |
+| console 6_fields    | 100000     | 9790  | 9     | 979082440  | 946392   | 0.97908244  |
+| null 6_fields       | 100000     | 144   | 0     | 14465363   | 88       | 0.014465363 |
+| file 6_fields       | 100000     | 3131  | 2     | 313126877  | 229199   | 0.313126877 |
+
 ## TODO
 
 [ ] Make Windows thread-safe
