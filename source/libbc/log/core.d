@@ -15,6 +15,12 @@ struct Field(string name_, alias ValueT_)
     alias ValueT = ValueT_;
 
     ValueT value;
+
+    static if(hasElaborateCopyConstructor!ValueT)
+    this(ref return scope typeof(this) src)
+    {
+        this.value = src.value;
+    }
 }
 
 Field!(name, T) field(string name, T)(T t)
